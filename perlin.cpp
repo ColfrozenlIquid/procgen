@@ -27,13 +27,13 @@ float Perlin::perlin () {
 
     n_0 = dot_grid_gradient(x_0, y_0, this->m_x, this->m_y);
     n_1 = dot_grid_gradient(x_1, y_0, this->m_x, this->m_y);
-    ix_0 = interpolate(n_0, n_1, s_x, Smoothness::NORMAL);
+    ix_0 = interpolate(n_0, n_1, s_x, Smoothness::SMOOTHER);
 
     n_0 = dot_grid_gradient(x_0, y_1, this->m_x, this->m_y);
     n_1 = dot_grid_gradient(x_1, y_1, this->m_x, this->m_y);
-    ix_1 = interpolate(n_0, n_1, s_x, Smoothness::NORMAL);
+    ix_1 = interpolate(n_0, n_1, s_x, Smoothness::SMOOTHER);
 
-    value = interpolate(ix_0, ix_1, s_y, Smoothness::NORMAL);
+    value = interpolate(ix_0, ix_1, s_y, Smoothness::SMOOTHER);
     return value;
 }
 
